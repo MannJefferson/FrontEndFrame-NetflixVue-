@@ -53,28 +53,28 @@ const Component = {
           <div class="container">
             <div class="box hover-button-display" v-for="item in watchListArray.slice(0, 6)">
               <img class="bg" :src="item.poster" />
-              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-minus"></i></button>
+              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-trash"></i></button>
             </div>
           </div>
 
           <div class="container">
             <div class="box hover-button-display" v-for="item in watchListArray.slice(7, 13)">
               <img class="bg" :src="item.poster" />
-              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-minus"></i></button>
+              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-trash"></i></button>
             </div>
           </div>
 
           <div class="container">
             <div class="box hover-button-display" v-for="item in watchListArray.slice(12, 17)">
               <img class="bg" :src="item.poster" />
-              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-minus"></i></button>
+              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-trash"></i></button>
             </div>
           </div>
 
           <div class="container">
             <div class="box hover-button-display" v-for="item in watchListArray.slice(18, 23)">
               <img class="bg" :src="item.poster" />
-              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-minus"></i></button>
+              <button type="button" class="hover-button" @click="removeFromWatchList(index)"><i class="fa fa-trash"></i></button>
             </div>
           </div>
       </section>
