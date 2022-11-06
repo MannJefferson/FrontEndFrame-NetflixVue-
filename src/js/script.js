@@ -67,6 +67,10 @@ const Component = {
     },
   },
 
+
+
+
+
   // html template
   template: /* html */ `
     <header id="myHeader">
@@ -101,7 +105,7 @@ const Component = {
           <p>{{ item.description }}</p>
           <div class="buttons">
           <button class="button play"><a :href="item.trailer" target="_blank"><i class="fa fa-play"></i> Play</a></button>
-          <button class="button info" id="myBtn"><i class="fa fa-plus"></i> More Info</button>
+          <button class="button info" id="myBtn"><i class="fa fa-plus"></i> Click for more</button>
 
         <!-- Modal -->
         <div id="myModal" class="modal">
@@ -135,6 +139,18 @@ const Component = {
           </div>
         </div>
       </section>
+
+
+     <section>
+     <div id="headrow">
+      <div class="row">
+        <h2 class="row_title"></h2>
+        <div class="row_posters"></div>
+      </div>
+     </div>
+     </section>
+
+
 
       <section id="content-grid">
         <div class="container-heading">Action</div>
@@ -212,4 +228,86 @@ window.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none";
     }
   };
+});
+
+//------------------------------------------------------------------
+
+//to check the following and remove after testing;
+// My Api key from TMDB
+const api = "api_key=6c90eb1cbe9a729f47eba5b53199555e";
+
+// base url of the site
+const base_url = "https://api.themoviedb.org/3";
+
+// url
+const final_url = base_url + "/discover/movie?sort_by=popularity.desc&" + api;
+
+// img url
+const img_url = "https://image.tmdb.org/t/p/original";
+
+const requests = {
+  fetchPopular: `${base_url}/discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc&${api}`,
+  fetchTrending: `${base_url}/trending/all/week?${api}&language=en-US`,
+  fetchNetflixOrignals: `${base_url}/discover/tv?${api}&with_networks=213`,
+  // fetchActionMovies: `${base_url}/discover/movie?${api}&with_genres=28`,
+  // fetchComedyMovies: `${base_url}/discover/movie?${api}&with_genres=35`,
+  // fetchHorrorMovies: `${base_url}/discover/movie?${api}&with_genres=27`,
+  // fetchRomanceMovies: `${base_url}/discover/movie?${api}&with_genres=35`,
+  // fetchDocumentaries: `${base_url}/discover/movie?${api}&with_genres=27`,
+};
+
+//trending
+
+fetch(requests.fetchPopular)
+.then((res) => res.json())
+.then((data) => {
+  const headrow = document.getElementById("headrow");
+  const row = document.createElement("div");
+  row.className = "row";
+  row.classList.add("popularrow");
+  headrow.appendChild(row);
+  const title = document.createElement("h2");
+  title.className = "row_title";
+  title.innerText = "Trending Now";
+  row.appendChild(title);
+  const row_posters = document.createElement("div");
+  row_posters.className = "row_posters";
+  row.appendChild(row_posters);
+  data.results.forEach(movie => {
+    const poster = document.createElement("img");
+    poster.className = "row_posterLarge";
+    var s2 = movie.id;
+    poster.id = s2;
+    poster.src = img_url + movie.poster_path;
+    row_posters.appendChild(poster);
+
+  });
+});
+
+// top rated
+
+fetch(requests.fetchTrending)
+.then((res) => res.json())
+.then((data) => {
+  const headrow = document.getElementById("headrow");
+  const row = document.createElement("div");
+  row.className = "row";
+  headrow.appendChild(row);
+  const title = document.createElement("h2");
+  title.className = "row_title";
+  title.innerText = "Top Rated";
+  row.appendChild(title);
+  const row_posters = document.createElement("div");
+  row_posters.className = "row_posters";
+  row.appendChild(row_posters);
+  data.results.forEach(movie => {
+    console.log(movie);
+    const poster = document.createElement("img");
+    poster.className = "row_posterLarge";
+    var s2 = movie.id;
+    poster.id = s2;
+    poster.src = img_url + movie.poster_path;
+    row_posters.appendChild(poster);
+
+  });
 });
