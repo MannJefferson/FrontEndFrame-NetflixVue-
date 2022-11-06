@@ -407,28 +407,7 @@ footer {
   color: grey;
   font-size: 0.7vw;
 }
-/* footer social links */
-footer .social-links {
-  display: flex;
-  margin-bottom: 0.5rem;
-}
-footer .social-link {
-  margin-right: 25px;
-}
-footer i {
-  font-size: 1.6vw;
-  color: white;
-}
-/* footer grid */
-footer .footer-grid {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  cursor: default;
-}
-footer .footer-grid-item {
-  list-style-type: none;
-  padding-bottom: 16px;
-}
+
 
 /********************************************************* */
 /*start of the trending page* styles*/
