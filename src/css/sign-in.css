@@ -1,0 +1,66 @@
+/* external font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* general styling */
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  font-family: "Poppins", sans-serif;
+}
+
+/* body */
+body {
+  background-color: #141414;
+  color: white;
+  background-image: url("./../images/sign-in-bg.jpg");
+}
+
+/* header */
+header {
+  align-items: center;
+  padding: 0px 30px 0px 30px;
+}
+header .netflix-logo img {
+  max-width: 200px;
+}
+
+/* form */
+form {
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.774);
+  max-width: 430px;
+  min-height: 630px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+form h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+form .text-input {
+  height: 50px;
+  width: 350px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 10px;
+}
+form .sign-in {
+  background-color: #e50914;
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+  border: none;
+  border-radius: 6px;
+  height: 50px;
+  width: 350px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  cursor: pointer;
+}
+form p {
+  font-size: 13px;
+  color: #8c8c8c;
+}

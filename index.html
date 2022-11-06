@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign In page of Netflix Clone" />
+    <!-- css -->
+    <link rel="stylesheet" href="./src/css/sign-in.css" />
+    <link rel="icon" href="./src/images/favicon.ico" type="image/x-icon" />
+    <!-- script -->
+    <script src="./src/js/signIn.js" defer></script>
+    <title>Netflix</title>
+  </head>
+  <body>
+    <!-- Sign In page -->
+    <header id="myHeader">
+      <div class="netflix-logo">
+        <img src="./src/images/netflix.png" alt="Netflix logo" />
+      </div>
+    </header>
+    <main>
+      <form id="signInform">
+        <h1>Sign In</h1>
+        <input type="text" placeholder="Username" id="username" class="text-input" minlength="5" maxlength="10" required />
+        <input type="password" placeholder="Password" id="password" class="text-input" minlength="5" maxlength="10" required />
+        <button type="submit" id="formBtn" class="sign-in">Sign In</button>
+        <p>Every time you sign in just put in a username and password</p>
+      </form>
+    </main>
+  </body>
+</html>
