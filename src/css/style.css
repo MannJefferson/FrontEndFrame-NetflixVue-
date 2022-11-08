@@ -333,9 +333,17 @@ main {
   padding: 0px 40px 0px 40px;
 }
 .container-heading {
-  font-size: 1.4vw;
+  /*font-size: 1.4vw;
   font-weight: 700;
-  padding-left: 9px;
+  padding-left: 9px;*/
+display: block;
+font-size: 1.5em;
+margin-block-start: 0.83em;
+margin-block-end: 00.83em;
+margin-inline-start: 0px;
+margin-inline-end:0px;
+font-weight: bold;
+
 }
 .container {
   display: flex;
@@ -352,7 +360,10 @@ main {
   display: block;
   padding-top: 70%;
 }
+
+/*styling for the movie images */
 .box img {
+  
   width: 100%;
   height: 100%;
   border-radius: 6px;
