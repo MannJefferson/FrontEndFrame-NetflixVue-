@@ -118,6 +118,7 @@ header {
   color: white;
   background-color: rgba(0, 0, 0, 0.616);
   border: 1px solid white;
+  border-radius: 7px;
   outline: none;
   padding: 0px 10px 0px 45px;
 }
